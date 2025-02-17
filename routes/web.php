@@ -4,6 +4,8 @@ use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SponsorsController;
 use App\Models\News;
+use App\Models\Sponsor;
+use App\Models\SponsoredAd;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Mail\ContactUs;
@@ -15,7 +17,11 @@ Route::get('/', function () {
     ->take(3)  // Limits to the first 3 results
     ->get();
 
-    return view('website.components.welcome', compact('news'));
+    $sponsoredAds = SponsoredAd::select('business_name', 'poster_path')->get();
+
+    $sponsors = Sponsor::select('logo')->get();
+
+    return view('website.components.welcome', compact('news', 'sponsoredAds', 'sponsors'));
 });
 
 Route::get('/dashboard', function () {

@@ -10,7 +10,7 @@
     <meta name="keywords"
         content="Impactive BUBU Expo, BUBU Expo 2025, Buy Uganda Build Uganda, Ugandan Innovation, Value Addition, Finance, Export, Trade Show" />
     <!-- Favicons -->
-    <link href="{{ asset('assets/img/favicon.png') }}" rel="icon">
+    <link href="{{ asset('assets/img/clients/client-1.jpeg') }}" rel="icon">
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Fonts -->

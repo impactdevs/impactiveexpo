@@ -425,12 +425,14 @@
                   }
                 </script>
                 <div class="swiper-wrapper align-items-center">
-                    <div class="swiper-slide"><img src="{{ asset('assets/img/clients/client-1.jpeg') }}"
+                    @foreach ($sponsors as $sponsor)
+                    <div class="swiper-slide"><img src="{{ asset('storage/'.$sponsor->logo) }}"
                             class="img-fluid" alt=""></div>
-                    <div class="swiper-slide"><img src="{{ asset('assets/img/clients/client-2.jpeg') }}"
+                            @endforeach
+                    {{-- <div class="swiper-slide"><img src="{{ asset('assets/img/clients/client-2.jpeg') }}"
                             class="img-fluid" alt=""></div>
                     <div class="swiper-slide"><img src="{{ asset('assets/img/clients/client-3.jpeg') }}"
-                            class="img-fluid" alt=""></div>
+                            class="img-fluid" alt=""></div> --}}
                     {{-- <div class="swiper-slide"><img src="{{ asset('assets/img/clients/client-4.png') }}" class="img-fluid"
                             alt=""></div>
                     <div class="swiper-slide"><img src="{{ asset('assets/img/clients/client-5.png') }}"
@@ -742,84 +744,19 @@
                         <i class="bi bi-arrow-right-short"></i>
                     </button>
                     <div class="swiper-wrapper">
+                        @foreach ($sponsoredAds as $item)
                         <div class="swiper-slide">
                             <div class="service-item">
                                 <div class="service-item-contents">
                                     <a href="#">
                                         {{-- <span class="service-item-category">We do</span> --}}
-                                        <h2 class="service-item-title">Kiira Motors</h2>
+                                        <h2 class="service-item-title">{{ $item->business_name }}</h2>
                                     </a>
                                 </div>
-                                <img src="{{ asset('assets/img/kiira-motors.jpeg') }}" alt="Image" class="img-fluid">
+                                <img src="{{ asset('storage/'.$item->poster_path) }}" alt="Image" class="img-fluid">
                             </div>
                         </div>
-                        <div class="swiper-slide">
-                            <div class="service-item">
-                                <div class="service-item-contents">
-                                    <a href="#">
-                                        <span class="service-item-category">We do</span>
-                                        <h2 class="service-item-title">Mulching</h2>
-                                    </a>
-                                </div>
-                                <img src="{{ asset('assets/img/img_sq_3.jpg') }}" alt="Image" class="img-fluid">
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="service-item">
-                                <div class="service-item-contents">
-                                    <a href="#">
-                                        <span class="service-item-category">We do</span>
-                                        <h2 class="service-item-title">Watering</h2>
-                                    </a>
-                                </div>
-                                <img src="{{ asset('assets/img/img_sq_8.jpg') }}" alt="Image" class="img-fluid">
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="service-item">
-                                <div class="service-item-contents">
-                                    <a href="#">
-                                        <span class="service-item-category">We do</span>
-                                        <h2 class="service-item-title">Fertilizing</h2>
-                                    </a>
-                                </div>
-                                <img src="{{ asset('assets/img/img_sq_4.jpg') }}" alt="Image" class="img-fluid">
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="service-item">
-                                <div class="service-item-contents">
-                                    <a href="#">
-                                        <span class="service-item-category">We do</span>
-                                        <h2 class="service-item-title">Harvesting</h2>
-                                    </a>
-                                </div>
-                                <img src="{{ asset('assets/img/img_sq_5.jpg') }}" alt="Image" class="img-fluid">
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="service-item">
-                                <div class="service-item-contents">
-                                    <a href="#">
-                                        <span class="service-item-category">We do</span>
-                                        <h2 class="service-item-title">Mowing</h2>
-                                    </a>
-                                </div>
-                                <img src="{{ asset('assets/img/img_sq_6.jpg') }}" alt="Image" class="img-fluid">
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="service-item">
-                                <div class="service-item-contents">
-                                    <a href="#">
-                                        <span class="service-item-category">We do</span>
-                                        <h2 class="service-item-title">Seeding Plants</h2>
-                                    </a>
-                                </div>
-                                <img src="{{ asset('assets/img/img_sq_8.jpg') }}" alt="Image" class="img-fluid">
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                     <div class="swiper-pagination"></div>
                 </div>
@@ -840,7 +777,7 @@
                 <div class="row">
                     <div class="col-md-6 mb-4 mb-md-4">
                         <div class="testimonial">
-                            <img src="{{ asset('assets/img/testimonials/testimonials-1.jpg') }}"
+                            <img src="{{ asset('assets/img/testimonials/museveni.jpg') }}"
                                 alt="Testimonial author">
                             <blockquote>
                                 <p>
@@ -853,7 +790,7 @@
                     </div>
                     <div class="col-md-6 mb-4 mb-md-4">
                         <div class="testimonial">
-                            <img src="{{ asset('assets/img/testimonials/testimonials-2.jpg') }}"
+                            <img src="{{ asset('assets/img/testimonials/mebesa.jpg') }}"
                                 alt="Testimonial author">
                             <blockquote>
                                 <p>
@@ -865,7 +802,7 @@
                     </div>
                     <div class="col-md-6 mb-4 mb-md-4">
                         <div class="testimonial">
-                            <img src="{{ asset('assets/img/testimonials/testimonials-3.jpg') }}"
+                            <img src="{{ asset('assets/img/testimonials/jeje.jpg') }}"
                                 alt="Testimonial author">
                             <blockquote>
                                 <p>
@@ -878,7 +815,7 @@
                     </div>
                     <div class="col-md-6 mb-4 mb-md-4">
                         <div class="testimonial">
-                            <img src="{{ asset('assets/img/testimonials/testimonials-4.jpg') }}"
+                            <img src="{{ asset('assets/img/testimonials/anita.jpg') }}"
                                 alt="Testimonial author">
                             <blockquote>
                                 <p>
@@ -891,7 +828,7 @@
                     </div>
                     <div class="col-md-6 mb-4 mb-md-4">
                         <div class="testimonial">
-                            <img src="{{ asset('assets/img/testimonials/testimonials-4.jpg') }}"
+                            <img src="{{ asset('assets/img/testimonials/robinah.jpg') }}"
                                 alt="Testimonial author">
                             <blockquote>
                                 <p>
@@ -899,7 +836,7 @@
                                     quality, Value addition, Export and Bast exhibitors in different sectors”
                                 </p>
                             </blockquote>
-                            <p class="client-name">Hon. Anita Among</p>
+                            <p class="client-name">Hon. Robinah Nabanja</p>
                         </div>
                     </div>
                 </div>
