@@ -67,7 +67,7 @@ Route::get('/pricing', function () {
 });
 
 Route::get('/download', function () {
-    return response()->download(public_path('assets/proposals/proposal-2025.pdf'));
+    return response()->download('assets/proposals/proposal-2025.pdf');
 });
 
 
