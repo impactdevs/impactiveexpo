@@ -10,6 +10,8 @@ class Sponsor extends Model implements HasMedia
 {
     use InteractsWithMedia;
 
+    protected $table = "sponsors";
+
     protected $fillable = [
         'logo',
         'business_name'

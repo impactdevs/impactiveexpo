@@ -10,6 +10,8 @@ class SponsoredAd extends Model implements HasMedia
 {
     use InteractsWithMedia;
 
+    protected $table = "sponsored_ads";
+    
     protected $fillable = [
         'poster_path',
         'business_name'
