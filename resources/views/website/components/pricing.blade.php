@@ -37,8 +37,6 @@
                                 <span class="amount">5M</span>
                                 <span class="period">/ year</span>
                             </div>
-                            <p class="description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                                accusantium doloremque laudantium totam.</p>
 
                             <h4>Featured Included:</h4>
                             <ul class="features-list">
@@ -99,8 +97,6 @@
                                 <span class="amount">10M</span>
                                 <span class="period">/ year</span>
                             </div>
-                            <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
-                                praesentium voluptatum.</p>
 
                             <h4>Featured Included:</h4>
                             <ul class="features-list">
@@ -183,8 +179,6 @@
                                 <span class="amount">25</span>
                                 <span class="period">/ year</span>
                             </div>
-                            <p class="description">Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam
-                                nihil molestiae.</p>
 
                             <h4>Featured Included:</h4>
                             <ul class="features-list">
@@ -261,8 +255,6 @@
                                 <span class="amount">50</span>
                                 <span class="period">/ year</span>
                             </div>
-                            <p class="description">Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam
-                                nihil molestiae.</p>
 
                             <h4>Featured Included:</h4>
                             <ul class="features-list">
@@ -358,9 +350,6 @@
                                 <span class="amount">100</span>
                                 <span class="period">/ year</span>
                             </div>
-                            <p class="description">Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse
-                                quam
-                                nihil molestiae.</p>
 
                             <h4>Featured Included:</h4>
                             <ul class="features-list">
@@ -433,8 +422,6 @@
                             </ul>
                         </div>
                     </div>
-
-
                 </div>
 
             </div>
