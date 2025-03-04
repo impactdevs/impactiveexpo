@@ -23,7 +23,9 @@
             <p>Don't miss out on the following guests.</p>
         </div><!-- End Section Title -->
 
-        <div class="testimonial-wrap">
+        <p>We shall upload guets here soon</p>
+
+        {{-- <div class="testimonial-wrap">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 mb-4 mb-md-4">
@@ -92,7 +94,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </section><!-- /Testimonials Section -->
 
 

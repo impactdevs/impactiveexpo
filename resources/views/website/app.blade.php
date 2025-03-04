@@ -8,7 +8,7 @@
     <meta name="description"
         content="Empowering Uganda's Future with Quality, Value Addition, Innovation, Finance, and Export Excellence at the Impactive BUBU Expo 2025." />
     <meta name="keywords"
-        content="Impactive BUBU Expo, BUBU Expo 2025, Buy Uganda Build Uganda, Ugandan Innovation, Value Addition, Finance, Export, Trade Show" />
+        content="Impactive BUBU Expo, BUBU Expo 2025, Buy Uganda Build Uganda, Ugandan Innovation, Value Addition, Finance, Export, Trade Show, impactive bubu expo, bubu expo, BUBU, BUBU Expo, impactive bubu, impactve BUBU" />
     <!-- Favicons -->
     <link href="{{ asset('assets/img/clients/client-1.jpeg') }}" rel="icon">
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">

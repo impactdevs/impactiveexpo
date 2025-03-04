@@ -464,81 +464,88 @@
 
             <div class="row g-4 justify-content-center">
 
-                    <!-- Premium Plan -->
-                    <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
-                        <div class="pricing-card">
-                            <h3>Gold</h3>
-                            <div class="price">
-                                <span class="currency">UGX</span>
-                                <span class="amount">25</span>
-                                <span class="period">/ year</span>
-                            </div>
+                                    <!-- Premium Plan -->
+                                    <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                                        <div class="pricing-card">
+                                            <h3>Gold</h3>
+                                            <div class="price">
+                                                <span class="currency">UGX</span>
+                                                <span class="amount">100M</span>
+                                                <span class="period">/ year</span>
+                                            </div>
 
-                            <h4>Featured Included:</h4>
-                            <ul class="features-list">
-                                <li>
-                                    <i class="bi bi-check-circle-fill"></i>
-                                    Logo & Mentions
-                                    in 50% of the
-                                    media promotions
-                                </li>
-                                <li>
-                                    <i class="bi bi-check-circle-fill"></i>
-                                    Feature in One (1)
-                                    of the Three (3)
-                                    Talk shows
-                                </li>
-                                <li>
-                                    <i class="bi bi-check-circle-fill"></i>
-                                    Six (6) months
-                                    social media
-                                    engagements on
-                                    all BUBU pages
-                                </li>
-                                <li>
-                                    <i class="bi bi-check-circle-fill"></i>
-                                    Six (6) months
-                                    Corporate logo
-                                    and Profile ad on
-                                    the BUBU website
-                                </li>
-                                <li>
-                                    <i class="bi bi-check-circle-fill"></i>
-                                    Awarded as a
-                                    Gold Sponsor with
-                                    a Gold Gift Pack
-                                    and Certificate
-                                </li>
-                                <li>
-                                    <i class="bi bi-check-circle-fill"></i>
-                                    60 minutes
-                                    presentation at
-                                    One 1 conference
-                                </li>
-                                <li>
-                                    <i class="bi bi-check-circle-fill"></i>
-                                    Six (6)
-                                    Sponsorship
-                                    promos on Centre
-                                    Stage for 3 days
-                                    during exhibitions
-                                </li>
-                                <li>
-                                    <i class="bi bi-check-circle-fill"></i>
-                                    Three (3)
-                                    Delegates
-                                    Complementary
-                                    Tickets
-                                </li>
-                                <li>
-                                    <i class="bi bi-check-circle-fill"></i>
-                                    One (1) Full Page
-                                    in the Event
-                                    Magazine
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+                                            <h4>Featured Included:</h4>
+                                            <ul class="features-list">
+                                                <li>
+                                                    <i class="bi bi-check-circle-fill"></i>
+                                                    Co-own the entire
+                                                    3 days Impactive
+                                                    BUBU Expo
+                                                </li>
+                                                <li>
+                                                    <i class="bi bi-check-circle-fill"></i>
+                                                    Prominent - Logo &
+                                                    Mentions in all
+                                                    media promotions
+                                                </li>
+                                                <li>
+                                                    <i class="bi bi-check-circle-fill"></i>
+                                                    Participate &
+                                                    Advertise in all
+                                                    Three (1) planned
+                                                    talk shows
+                                                </li>
+                                                <li>
+                                                    <i class="bi bi-check-circle-fill"></i>
+                                                    Twelve (12) months
+                                                    social media
+                                                    campaign on all
+                                                    BUBU pages
+                                                </li>
+                                                <li>
+                                                    <i class="bi bi-check-circle-fill"></i>
+                                                    Twelve (12) months
+                                                    Corporate logo and
+                                                    Profile ad on the
+                                                    BUBU website
+                                                </li>
+                                                <li>
+                                                    <i class="bi bi-check-circle-fill"></i>
+                                                    Awarded as
+                                                    Platinum Sponsor
+                                                    with a Platinum
+                                                    Gift Pack and
+                                                    Certificate
+                                                </li>
+                                                <li>
+                                                    <i class="bi bi-check-circle-fill"></i>
+                                                    1 hour presentation at the 2 conferences
+                                                </li>
+                                                <li>
+                                                    <i class="bi bi-check-circle-fill"></i>
+                                                    Ten (10)
+                                                    Sponsorship
+                                                    promos on Centre
+                                                    Stage for 3 days
+                                                    during exhibitions
+                                                </li>
+                                                <li>
+                                                    <i class="bi bi-check-circle-fill"></i>
+                                                    Ten (10) Delegates
+                                                    Complementary
+                                                    Table @ the BUBU
+                                                    Awards Dinner
+                                                </li>
+                                                <li>
+                                                    <i class="bi bi-check-circle-fill"></i>
+                                                    Back Cover & One
+                                                    (1) Full Page in the
+                                                    Event Magazine
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
 
                     <!-- Premium Plan -->
                     <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
@@ -546,7 +553,7 @@
                             <h3>Diamond</h3>
                             <div class="price">
                                 <span class="currency">UGX</span>
-                                <span class="amount">50</span>
+                                <span class="amount">50M</span>
                                 <span class="period">/ year</span>
                             </div>
 
@@ -635,13 +642,14 @@
                             </ul>
                         </div>
                     </div>
+
                     <!-- Premium Plan -->
                     <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
                         <div class="pricing-card">
                             <h3>Gold</h3>
                             <div class="price">
                                 <span class="currency">UGX</span>
-                                <span class="amount">100</span>
+                                <span class="amount">25M</span>
                                 <span class="period">/ year</span>
                             </div>
 
@@ -649,52 +657,46 @@
                             <ul class="features-list">
                                 <li>
                                     <i class="bi bi-check-circle-fill"></i>
-                                    Co-own the entire
-                                    3 days Impactive
-                                    BUBU Expo
-                                </li>
-                                <li>
-                                    <i class="bi bi-check-circle-fill"></i>
-                                    Prominent - Logo &
-                                    Mentions in all
+                                    Logo & Mentions
+                                    in 50% of the
                                     media promotions
                                 </li>
                                 <li>
                                     <i class="bi bi-check-circle-fill"></i>
-                                    Participate &
-                                    Advertise in all
-                                    Three (1) planned
-                                    talk shows
+                                    Feature in One (1)
+                                    of the Three (3)
+                                    Talk shows
                                 </li>
                                 <li>
                                     <i class="bi bi-check-circle-fill"></i>
-                                    Twelve (12) months
+                                    Six (6) months
                                     social media
-                                    campaign on all
-                                    BUBU pages
+                                    engagements on
+                                    all BUBU pages
                                 </li>
                                 <li>
                                     <i class="bi bi-check-circle-fill"></i>
-                                    Twelve (12) months
-                                    Corporate logo and
-                                    Profile ad on the
-                                    BUBU website
+                                    Six (6) months
+                                    Corporate logo
+                                    and Profile ad on
+                                    the BUBU website
                                 </li>
                                 <li>
                                     <i class="bi bi-check-circle-fill"></i>
-                                    Awarded as
-                                    Platinum Sponsor
-                                    with a Platinum
-                                    Gift Pack and
-                                    Certificate
+                                    Awarded as a
+                                    Gold Sponsor with
+                                    a Gold Gift Pack
+                                    and Certificate
                                 </li>
                                 <li>
                                     <i class="bi bi-check-circle-fill"></i>
-                                    1 hour presentation at the 2 conferences
+                                    60 minutes
+                                    presentation at
+                                    One 1 conference
                                 </li>
                                 <li>
                                     <i class="bi bi-check-circle-fill"></i>
-                                    Ten (10)
+                                    Six (6)
                                     Sponsorship
                                     promos on Centre
                                     Stage for 3 days
@@ -702,20 +704,22 @@
                                 </li>
                                 <li>
                                     <i class="bi bi-check-circle-fill"></i>
-                                    Ten (10) Delegates
+                                    Three (3)
+                                    Delegates
                                     Complementary
-                                    Table @ the BUBU
-                                    Awards Dinner
+                                    Tickets
                                 </li>
                                 <li>
                                     <i class="bi bi-check-circle-fill"></i>
-                                    Back Cover & One
-                                    (1) Full Page in the
-                                    Event Magazine
+                                    One (1) Full Page
+                                    in the Event
+                                    Magazine
                                 </li>
                             </ul>
                         </div>
                     </div>
+
+
 
                       <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
@@ -800,8 +804,8 @@
             <h2>GUEST LIST FOR IMPACTIVE BUBU EXPO 2025</h2>
             <p>Don't miss out on the following guests.</p>
         </div><!-- End Section Title -->
-
-        <div class="testimonial-wrap">
+        <p>We shall upload guets here soon</p>
+        {{-- <div class="testimonial-wrap">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 mb-4 mb-md-4">
@@ -870,7 +874,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </section><!-- /Testimonials Section -->
 
     <!-- Recent Posts Section -->
