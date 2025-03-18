@@ -6,7 +6,7 @@
         <div id="hero-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
 
             <div class="carousel-item active">
-                <img src="{{ asset('assets/img/hero_1.jpeg') }}" alt="">
+                <img src="{{ asset('assets/img/hero_1.jpeg') }}" alt="" alt="Show case your products and services">
                 <div class="carousel-container">
                     <h2>Impactive BUBU Expo 2025</h2>
                     <p>“Building Uganda’s Future through Quality, Value Addition, Innovation, Finance and Export”</p>
@@ -14,7 +14,7 @@
             </div><!-- End Carousel Item -->
 
             <div class="carousel-item">
-                <img src="{{ asset('assets/img/hero_2.jpeg') }}" alt="">
+                <img src="{{ asset('assets/img/hero_2.jpeg') }}" alt="Expoze your products and services">
                 <div class="carousel-container">
                     <h2>IMPACTIVE Expoze</h2>
                     <p>Exhibitions, Conferences and Awards Dinner Gala</p>
@@ -22,7 +22,7 @@
             </div><!-- End Carousel Item -->
 
             <div class="carousel-item">
-                <img src="{{ asset('assets/img/hero_3.jpeg') }}" alt="">
+                <img src="{{ asset('assets/img/hero_3.jpeg') }}" alt="Day 1 08th May Thur for Impactive BUBU Expo 2025">
                 <div class="carousel-container">
                     <h2>DAY-1 08th MAY THUR</h2>
                     <p>Showcase and promoting all goods and services in UG, Visiting exhibition stalls Opening Ceremony
@@ -31,7 +31,7 @@
             </div><!-- End Carousel Item -->
 
             <div class="carousel-item">
-                <img src="{{ asset('assets/img/hero_4.jpeg') }}" alt="">
+                <img src="{{ asset('assets/img/hero_4.jpeg') }}" alt="Day 2 09th May Fri for Impactive BUBU Expo 2025">
                 <div class="carousel-container">
                     <h2>DAY-2 09th MAY FRI</h2>
                     <p>Showcase and promoting all goods and services in UG, Dialog on: How to improve Quality, How to Add
@@ -40,7 +40,7 @@
             </div><!-- End Carousel Item -->
 
             <div class="carousel-item">
-                <img src="{{ asset('assets/img/hero_5.jpeg') }}" alt="">
+                <img src="{{ asset('assets/img/hero_5.jpeg') }}" alt="Day 3 10th May Sat for Impactive BUBU Expo 2025">
                 <div class="carousel-container">
                     <h2>DAY-3 10th MAY SAT</h2>
                     <p>Showcase and promoting all goods and services made in UG, Dialog on how to leverage on the growing
@@ -387,7 +387,7 @@
         <div class="container">
             <div class="row gy-4 justify-content-between align-items-center">
                 <div class="col-lg-6 order-lg-2 position-relative" data-aos="zoom-out">
-                    <img src="{{ asset('assets/img/happening-soon-3.jpeg') }}" alt="Image" class="img-fluid">
+                    <img src="{{ asset('assets/img/happening-soon-3.jpeg') }}" alt="Impact BUBU Expo Happening soon" class="img-fluid">
                     <a href="https://youtu.be/fqRKWralAxI" class="glightbox pulsating-play-btn">
                         <span class="play"><i class="bi bi-play-fill"></i></span>
                     </a>
@@ -457,20 +457,6 @@
                         <div class="swiper-slide"><img src="{{ asset('storage/' . $sponsor->logo) }}" class="img-fluid"
                                 alt=""></div>
                     @endforeach
-                    {{-- <div class="swiper-slide"><img src="{{ asset('assets/img/clients/client-2.jpeg') }}"
-                            class="img-fluid" alt=""></div>
-                    <div class="swiper-slide"><img src="{{ asset('assets/img/clients/client-3.jpeg') }}"
-                            class="img-fluid" alt=""></div> --}}
-                    {{-- <div class="swiper-slide"><img src="{{ asset('assets/img/clients/client-4.png') }}" class="img-fluid"
-                            alt=""></div>
-                    <div class="swiper-slide"><img src="{{ asset('assets/img/clients/client-5.png') }}"
-                            class="img-fluid" alt=""></div>
-                    <div class="swiper-slide"><img src="{{ asset('assets/img/clients/client-6.png') }}"
-                            class="img-fluid" alt=""></div>
-                    <div class="swiper-slide"><img src="{{ asset('assets/img/clients/client-7.png') }}"
-                            class="img-fluid" alt=""></div>
-                    <div class="swiper-slide"><img src="{{ asset('assets/img/clients/client-8.png') }}"
-                            class="img-fluid" alt=""></div> --}}
                 </div>
                 <div class="swiper-pagination"></div>
             </div>
@@ -814,7 +800,7 @@
                                             <h2 class="service-item-title">{{ $item->business_name }}</h2>
                                         </a>
                                     </div>
-                                    <img src="{{ asset('storage/' . $item->poster_path) }}" alt="Image"
+                                    <img src="{{ asset('storage/' . $item->poster_path) }}" alt="Impactive BUBU Expo 2025"
                                         class="img-fluid">
                                 </div>
                             </div>
