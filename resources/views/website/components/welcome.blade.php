@@ -22,7 +22,7 @@
             </div><!-- End Carousel Item -->
 
             <div class="carousel-item">
-                <img src="{{ asset('assets/img/hero_3.jpeg') }}" alt="Day 1 08th May Thur for Impactive BUBU Expo 2025">
+                <img src="{{ asset('assets/img/hero_3.jpeg') }}" alt="Day 1 24th Jul Thur for Impactive BUBU Expo 2025">
                 <div class="carousel-container">
                     <h2>DAY-1 24th JUL THUR</h2>
                     <p>Showcase and promoting all goods and services in UG, Visiting exhibition stalls Opening Ceremony
@@ -31,7 +31,7 @@
             </div><!-- End Carousel Item -->
 
             <div class="carousel-item">
-                <img src="{{ asset('assets/img/hero_4.jpeg') }}" alt="Day 2 09th May Fri for Impactive BUBU Expo 2025">
+                <img src="{{ asset('assets/img/hero_4.jpeg') }}" alt="Day 2 25th Jul Fri for Impactive BUBU Expo 2025">
                 <div class="carousel-container">
                     <h2>DAY-2 25th JUL FRI</h2>
                     <p>Showcase and promoting all goods and services in UG, Dialog on: How to improve Quality, How to Add
@@ -40,7 +40,7 @@
             </div><!-- End Carousel Item -->
 
             <div class="carousel-item">
-                <img src="{{ asset('assets/img/hero_5.jpeg') }}" alt="Day 3 10th May Sat for Impactive BUBU Expo 2025">
+                <img src="{{ asset('assets/img/hero_5.jpeg') }}" alt="Day 3 26th Jul Sat for Impactive BUBU Expo 2025">
                 <div class="carousel-container">
                     <h2>DAY-3 26th JUL SAT</h2>
                     <p>Showcase and promoting all goods and services made in UG, Dialog on how to leverage on the growing
