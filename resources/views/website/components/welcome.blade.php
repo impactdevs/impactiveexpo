@@ -24,7 +24,7 @@
             <div class="carousel-item">
                 <img src="{{ asset('assets/img/hero_3.jpeg') }}" alt="Day 1 08th May Thur for Impactive BUBU Expo 2025">
                 <div class="carousel-container">
-                    <h2>DAY-1 08th MAY THUR</h2>
+                    <h2>DAY-1 24th JUL THUR</h2>
                     <p>Showcase and promoting all goods and services in UG, Visiting exhibition stalls Opening Ceremony
                         Speech and Speeches from stakeholders.</p>
                 </div>
@@ -33,7 +33,7 @@
             <div class="carousel-item">
                 <img src="{{ asset('assets/img/hero_4.jpeg') }}" alt="Day 2 09th May Fri for Impactive BUBU Expo 2025">
                 <div class="carousel-container">
-                    <h2>DAY-2 09th MAY FRI</h2>
+                    <h2>DAY-2 25th JUL FRI</h2>
                     <p>Showcase and promoting all goods and services in UG, Dialog on: How to improve Quality, How to Add
                         Value, Increasing</p>
                 </div>
@@ -42,7 +42,7 @@
             <div class="carousel-item">
                 <img src="{{ asset('assets/img/hero_5.jpeg') }}" alt="Day 3 10th May Sat for Impactive BUBU Expo 2025">
                 <div class="carousel-container">
-                    <h2>DAY-3 10th MAY SAT</h2>
+                    <h2>DAY-3 26th JUL SAT</h2>
                     <p>Showcase and promoting all goods and services made in UG, Dialog on how to leverage on the growing
                         power of womenin Business and awarding </p>
                 </div>
