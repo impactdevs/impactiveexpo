@@ -104,7 +104,7 @@ Route::post('/contact-us', function (Request $request) {
             ->replyTo($email, $name); // Optional: makes reply go to the user
     });
 
-    return to_route('contact-us')->with('success', 'Your message has been sent successfully!');
+    return view('website.components.thank-you');
 })->name('contact-us');
 
 
