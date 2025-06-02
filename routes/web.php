@@ -9,13 +9,14 @@ use App\Models\SponsoredAd;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Mail\ContactUs;
-
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
 
 Route::get('/', function () {
     $news = News::select('id', 'title', 'created_at')
-    ->latest() // Orders by the latest created_at
-    ->take(3)  // Limits to the first 3 results
-    ->get();
+        ->latest() // Orders by the latest created_at
+        ->take(3)  // Limits to the first 3 results
+        ->get();
 
     $sponsoredAds = SponsoredAd::select('business_name', 'poster_path')->get();
 
@@ -90,10 +91,20 @@ Route::post('/contact-us', function (Request $request) {
     Log::info($subject);
     Log::info($userMessage);
 
-    // Send the mail
-    Mail::to("nsengiyumvawilberforce@gmail.com")->send(new ContactUs($name, $email, $subject, $userMessage));
+    // Construct raw message
+    $fullMessage = "Name: $name\n";
+    $fullMessage .= "Email: $email\n";
+    $fullMessage .= "Subject: $subject\n";
+    $fullMessage .= "Message:\n$userMessage";
 
-    return back()->with("success", "Your message has been sent!!!");
+    // Send raw mail
+    Mail::raw($fullMessage, function ($message) use ($email, $name, $subject) {
+        $message->to('info@impactivebubuexpo.com')
+            ->subject($subject)
+            ->replyTo($email, $name); // Optional: makes reply go to the user
+    });
+
+    return to_route('contact-us')->with('success', 'Your message has been sent successfully!');
 })->name('contact-us');
 
 

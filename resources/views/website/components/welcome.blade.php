@@ -404,6 +404,8 @@
                         <li>Innovate with purpose</li>
                         <li>Showcase with confidence</li>
                     </ul>
+
+                    <p><a href="/register" class="btn-cta">Join Us</a></p>
                 </div>
             </div>
         </div>
