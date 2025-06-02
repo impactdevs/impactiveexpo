@@ -23,9 +23,6 @@
                 <div class="row gy-4 justify-content-between align-items-center">
                     <div class="col-lg-6 order-lg-2 position-relative" data-aos="zoom-out">
                         <img src="assets/img/about-section-1.jpeg" alt="Image" class="img-fluid">
-                        {{-- <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox pulsating-play-btn">
-                            <span class="play"><i class="bi bi-play-fill"></i></span>
-                        </a> --}}
                     </div>
                     <div class="col-lg-5 order-lg-1" data-aos="fade-up" data-aos-delay="100">
                         <h2 class="content-title mb-4">Make Business Better</h2>
