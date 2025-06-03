@@ -11,7 +11,7 @@
         content="Impactive BUBU Expo, BUBU Expo 2025, Buy Uganda Build Uganda, Ugandan Innovation, Value Addition, Finance, Export, Trade Show, impactive bubu expo, bubu expo, BUBU, BUBU Expo, impactive bubu, impactve BUBU" />
     <!-- Favicons -->
     <link href="{{ asset('assets/img/clients/client-1.jpeg') }}" rel="icon">
-    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="{{ asset('assets/img/clients/client-1.jpeg') }}" rel="apple-touch-icon">
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect">
