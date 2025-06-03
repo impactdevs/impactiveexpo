@@ -9,8 +9,10 @@ use App\Models\SponsoredAd;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Mail\ContactUs;
+use App\Models\BusinessRegistration;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Validator;
 
 Route::get('/', function () {
     $news = News::select('id', 'title', 'created_at')
@@ -106,6 +108,77 @@ Route::post('/contact-us', function (Request $request) {
 
     return view('website.components.thank-you');
 })->name('contact-us');
+
+Route::get("/register-with-us", function () {
+    return view('website.components.register-with-us');
+})->name('register-with-us');
+
+Route::post('/register-your-business', function (Request $request) {
+    // Validate the request
+    $validator = Validator::make($request->all(), [
+        'business_name' => 'required|string|max:255',
+        'email' => 'required|email|max:255',
+        'phone' => 'required|string|max:20',
+        'package' => 'required|in:gold,diamond,silver,bronze',
+        'message' => 'nullable|string|max:1000',
+    ], [
+        'business_name.required' => 'The business name field is required.',
+        'email.required' => 'The email field is required.',
+        'email.email' => 'Please enter a valid email address.',
+        'phone.required' => 'The phone number field is required.',
+        'package.required' => 'Please select a package.',
+        'package.in' => 'Please select a valid package option.',
+    ]);
+
+    // Check if validation fails
+    if ($validator->fails()) {
+        return redirect()->back()
+            ->withErrors($validator)
+            ->withInput();
+    }
+
+    try {
+        // Create and save registration
+        $registration = BusinessRegistration::create([
+            'business_name' => $request->business_name,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'package' => $request->package,
+            'message' => $request->message,
+            'ip_address' => $request->ip(),
+            'user_agent' => $request->header('User-Agent'),
+        ]);
+
+        // construct a raw email to coordinator@impactivebubuexpo.com
+        $rawMessage = "Business Name: {$registration->business_name}\n";
+        $rawMessage .= "Email: {$registration->email}\n";
+        $rawMessage .= "Phone: {$registration->phone}\n";
+        $rawMessage .= "Package: {$registration->package}\n";
+        $rawMessage .= "Message: {$registration->message}\n";
+        $rawMessage .= "IP Address: {$registration->ip_address}\n";
+        $rawMessage .= "User Agent: {$registration->user_agent}\n";
+        $rawMessage .= "Registration ID: {$registration->id}\n";
+        Mail::raw($rawMessage, function ($message) use ($registration) {
+            $message->to('coordinator@impactivebubuexpo.com')
+                ->subject('New Business Registration')
+                ->replyTo($registration->email, $registration->business_name);
+        });
+
+        return redirect()->route('register-with-us')->with([
+            'success' => 'Thank you for registering your business! We will contact you shortly.',
+            'registration_id' => $registration->id
+        ]);
+    } catch (\Exception $e) {
+        Log::error('Business registration failed: ' . $e->getMessage(), [
+            'error' => $e->getTraceAsString(),
+            'data' => $request->except('_token')
+        ]);
+
+        return redirect()->back()
+            ->with('error', 'Registration failed. Please try again later.')
+            ->withInput();
+    }
+})->name('register-with-us.post');
 
 
 Route::middleware('auth')->group(function () {

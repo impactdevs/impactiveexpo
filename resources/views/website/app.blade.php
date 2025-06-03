@@ -57,6 +57,7 @@
                             <li><a href="/publications">Magazine 2025</a></li>
                         </ul>
                     </li>
+                    <li><a href="/register-with-us">Register</a></li>
                     <li><a href="contact">Contact</a></li>
                 </ul>
                 <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
