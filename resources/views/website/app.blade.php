@@ -129,9 +129,9 @@
                     <div class="col-lg-2 col-md-3 footer-links">
                         <h4>Program</h4>
                         <ul>
-                            <li><a href="#">Thursday, 08TH, May</a></li>
-                            <li><a href="#">Friday, 09TH, May</a></li>
-                            <li><a href="#">Saturday, 10TH, May</a></li>
+                            <li><a href="#">Thursday, 24TH, July</a></li>
+                            <li><a href="#">Friday, 25TH, July</a></li>
+                            <li><a href="#">Saturday, 26TH, July</a></li>
                         </ul>
                     </div>
 
