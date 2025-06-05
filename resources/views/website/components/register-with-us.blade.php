@@ -373,7 +373,7 @@
                             <!-- Business Name -->
                             <div class="col-md-12 form-group">
                                 <label for="business_name" class="form-label">Business Name</label>
-                                <input type="text" name="business_name" class="form-control" id="business_name"
+                                <input type="text" name="business_name" class="form-control" id="business_name" value="{{ old('business_name') }}"
                                     placeholder="Enter business name" required>
                                 <span class="input-icon"><i class="fas fa-building"></i></span>
                             </div>
@@ -381,7 +381,7 @@
                             <!-- Contact Email -->
                             <div class="col-md-6 form-group mt-3">
                                 <label for="email" class="form-label">Contact Email</label>
-                                <input type="email" class="form-control" name="email" id="email"
+                                <input type="email" class="form-control" name="email" id="email" value="{{ old('email') }}"
                                     placeholder="your@email.com" required>
                                 <span class="input-icon"><i class="fas fa-envelope"></i></span>
                             </div>
@@ -389,7 +389,7 @@
                             <!-- Phone Number -->
                             <div class="col-md-6 form-group mt-3">
                                 <label for="phone" class="form-label">Contact Phone</label>
-                                <input type="tel" class="form-control" name="phone" id="phone"
+                                <input type="tel" class="form-control" name="phone" id="phone" value="{{ old('phone') }}"
                                     placeholder="+123 456 7890" required>
                                 <span class="input-icon"><i class="fas fa-phone"></i></span>
                             </div>
