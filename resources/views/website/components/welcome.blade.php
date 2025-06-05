@@ -483,7 +483,7 @@
                 <!-- Premium Plan -->
                 <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
                     <div class="pricing-card">
-                        <h3>Gold</h3>
+                        <h3>Platinum</h3>
                         <div class="price">
                             <span class="currency">UGX</span>
                             <span class="amount">100M</span>
@@ -662,7 +662,7 @@
                 <!-- Premium Plan -->
                 <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
                     <div class="pricing-card">
-                        <h3>Silver</h3>
+                        <h3>Gold</h3>
                         <div class="price">
                             <span class="currency">UGX</span>
                             <span class="amount">25M</span>
