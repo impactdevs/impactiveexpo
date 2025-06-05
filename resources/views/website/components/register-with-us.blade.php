@@ -282,11 +282,69 @@
                 color: #94a3b8;
                 font-size: 1.1rem;
             }
+
+            /* New styles for multi-section form */
+            .form-section {
+                background: white;
+                border-radius: 12px;
+                box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+                padding: 2rem;
+                margin-bottom: 2rem;
+                border: 1px solid #eef2f7;
+            }
+
+            .form-section-header {
+                color: #1e293b;
+                font-weight: 700;
+                font-size: 1.5rem;
+                padding-bottom: 1rem;
+                margin-bottom: 1.5rem;
+                border-bottom: 2px solid #dbeafe;
+                position: relative;
+            }
+
+            .form-section-header:after {
+                content: "";
+                position: absolute;
+                bottom: -2px;
+                left: 0;
+                width: 80px;
+                height: 4px;
+                background: linear-gradient(90deg, #3b82f6, #2563eb);
+                border-radius: 4px;
+            }
+
+            .package-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+                gap: 16px;
+                margin-top: 0.5rem;
+            }
+
+            .package-grid-4 {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+
+            .package-grid-7 {
+                grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            }
+
+            .package-grid-3 {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+
+            .package-option-price {
+                display: block;
+                font-size: 0.9rem;
+                font-weight: 600;
+                color: #2563eb;
+                margin-top: 6px;
+            }
         </style>
 
         <div class="container" data-aos="fade">
             <div class="row justify-content-center">
-                <div class="col-lg-8">
+                <div class="col-lg-10">
                     <form action="/register-your-business" method="post" class="register-form php-email-form"
                         style="opacity: 0;">
                         @csrf
@@ -336,25 +394,165 @@
                                 <span class="input-icon"><i class="fas fa-phone"></i></span>
                             </div>
 
-                            <!-- Package Selection -->
-                            <div class="col-md-12 form-group mt-3">
-                                <label for="package" class="form-label">Select Package</label>
-                                <div class="package-options">
-                                    <div class="package-option">
-                                        <input type="radio" name="package" id="gold" value="gold" required>
-                                        <label for="gold">Gold - 100m</label>
+                            <!-- ====================== -->
+                            <!-- Sponsor Packages Section -->
+                            <!-- ====================== -->
+                            <div class="col-md-12 form-section mt-4">
+                                <h3 class="form-section-header">Sponsor Packages</h3>
+                                <p>If you are interested in our sponsorship packages, select one below. Most people are
+                                    taking Diamond.</p>
+                                <div class="form-group mt-3">
+                                    <div class="package-options package-grid">
+                                        <div class="package-option">
+                                            <input type="radio" name="sponsor_package" id="gold" value="gold">
+                                            <label for="gold">Gold - 100m
+                                                <span class="package-option-price">100,000,000 UGX</span>
+                                            </label>
+                                        </div>
+                                        <div class="package-option">
+                                            <input type="radio" name="sponsor_package" id="diamond" value="diamond">
+                                            <label for="diamond">Diamond - 50m
+                                                <span class="package-option-price">50,000,000 UGX</span>
+                                            </label>
+                                        </div>
+                                        <div class="package-option">
+                                            <input type="radio" name="sponsor_package" id="silver" value="silver">
+                                            <label for="silver">Silver - 25m
+                                                <span class="package-option-price">25,000,000 UGX</span>
+                                            </label>
+                                        </div>
+                                        <div class="package-option">
+                                            <input type="radio" name="sponsor_package" id="bronze" value="bronze">
+                                            <label for="bronze">Bronze - 5m
+                                                <span class="package-option-price">5,000,000 UGX</span>
+                                            </label>
+                                        </div>
                                     </div>
-                                    <div class="package-option">
-                                        <input type="radio" name="package" id="diamond" value="diamond" required>
-                                        <label for="diamond">Diamond - 50m</label>
+                                </div>
+                            </div>
+
+                            <!-- ====================== -->
+                            <!-- Exhibitor Packages Section -->
+                            <!-- ====================== -->
+                            <div class="col-md-12 form-section">
+                                <h3 class="form-section-header">Exhibition Tent Packages (Size 5*5m)</h3>
+                                <p>Select your preferred exhibition tent option below:</p>
+                                <div class="form-group mt-3">
+                                    <div class="package-options package-grid package-grid-4">
+                                        <div class="package-option">
+                                            <input type="radio" name="exhibitor_package" id="full_tent" value="full_tent">
+                                            <label for="full_tent">Full Tent
+                                                <span class="package-option-price">1,200,000 UGX</span>
+                                            </label>
+                                        </div>
+                                        <div class="package-option">
+                                            <input type="radio" name="exhibitor_package" id="shared_tent_2"
+                                                value="shared_tent_2">
+                                            <label for="shared_tent_2">Shared Tent (Max 2)
+                                                <span class="package-option-price">600,000 UGX</span>
+                                            </label>
+                                        </div>
+                                        <div class="package-option">
+                                            <input type="radio" name="exhibitor_package" id="shared_tent_5"
+                                                value="shared_tent_5">
+                                            <label for="shared_tent_5">Shared Tent (Max 5)
+                                                <span class="package-option-price">300,000 UGX</span>
+                                            </label>
+                                        </div>
                                     </div>
-                                    <div class="package-option">
-                                        <input type="radio" name="package" id="silver" value="silver" required>
-                                        <label for="silver">Silver - 25m</label>
+                                </div>
+                            </div>
+
+                            <!-- ====================== -->
+                            <!-- Awards Dinner Gala Section -->
+                            <!-- ====================== -->
+                            <div class="col-md-12 form-section">
+                                <h3 class="form-section-header">BUBU AWARDS GALA DINNER</h3>
+                                <p>Select your preferred dinner package options below:</p>
+                                <div class="form-group mt-3">
+                                    <div class="package-options package-grid package-grid-3">
+                                        <div class="package-option">
+                                            <input type="radio" name="dinner_package" id="dinner_table_10"
+                                                value="table_10">
+                                            <label for="dinner_table_10">Table for 10 people
+                                                <span class="package-option-price">1,000,000 UGX per table</span>
+                                            </label>
+                                        </div>
+                                        <div class="package-option">
+                                            <input type="radio" name="dinner_package" id="dinner_table_5"
+                                                value="table_5">
+                                            <label for="dinner_table_5">Table for 5 people
+                                                <span class="package-option-price">500,000 UGX per table</span>
+                                            </label>
+                                        </div>
+                                        <div class="package-option">
+                                            <input type="radio" name="dinner_package" id="dinner_individual"
+                                                value="individual">
+                                            <label for="dinner_individual">Individual ticket
+                                                <span class="package-option-price">100,000 UGX per ticket</span>
+                                            </label>
+                                        </div>
                                     </div>
-                                    <div class="package-option">
-                                        <input type="radio" name="package" id="bronze" value="bronze" required>
-                                        <label for="bronze">Bronze - 5m</label>
+                                </div>
+                            </div>
+
+                            <!-- ====================== -->
+                            <!-- Magazine Space Section -->
+                            <!-- ====================== -->
+                            <div class="col-md-12 form-section">
+                                <h3 class="form-section-header">Magazine Space</h3>
+                                <p>Select your preferred magazine advertising options below:</p>
+                                <div class="form-group mt-3">
+                                    <div class="package-options package-grid package-grid-7">
+                                        <div class="package-option">
+                                            <input type="checkbox" name="magazine_back_cover" id="magazine_back_cover"
+                                                value="1">
+                                            <label for="magazine_back_cover">Back Cover
+                                                <span class="package-option-price">4,672,800 UGX</span>
+                                            </label>
+                                        </div>
+                                        <div class="package-option">
+                                            <input type="checkbox" name="magazine_inside_cover"
+                                                id="magazine_inside_cover" value="1">
+                                            <label for="magazine_inside_cover">Inside Cover
+                                                <span class="package-option-price">3,894,000 UGX</span>
+                                            </label>
+                                        </div>
+                                        <div class="package-option">
+                                            <input type="checkbox" name="magazine_page3" id="magazine_page3"
+                                                value="1">
+                                            <label for="magazine_page3">Page 3 (full)
+                                                <span class="package-option-price">3,352,800 UGX</span>
+                                            </label>
+                                        </div>
+                                        <div class="package-option">
+                                            <input type="checkbox" name="magazine_full_page" id="magazine_full_page"
+                                                value="1">
+                                            <label for="magazine_full_page">Full Page
+                                                <span class="package-option-price">2,336,400 UGX</span>
+                                            </label>
+                                        </div>
+                                        <div class="package-option">
+                                            <input type="checkbox" name="magazine_half_vertical"
+                                                id="magazine_half_vertical" value="1">
+                                            <label for="magazine_half_vertical">Half Page Vertical
+                                                <span class="package-option-price">1,713,360 UGX</span>
+                                            </label>
+                                        </div>
+                                        <div class="package-option">
+                                            <input type="checkbox" name="magazine_half_horizontal"
+                                                id="magazine_half_horizontal" value="1">
+                                            <label for="magazine_half_horizontal">Half Page Horizontal
+                                                <span class="package-option-price">1,401,840 UGX</span>
+                                            </label>
+                                        </div>
+                                        <div class="package-option">
+                                            <input type="checkbox" name="magazine_quarter" id="magazine_quarter"
+                                                value="1">
+                                            <label for="magazine_quarter">Quarter Page
+                                                <span class="package-option-price">934,560 UGX</span>
+                                            </label>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -388,11 +586,27 @@
                 // Package selection
                 const packageOptions = document.querySelectorAll('.package-option');
                 packageOptions.forEach(option => {
-                    option.addEventListener('click', function() {
-                        packageOptions.forEach(o => o.classList.remove('selected'));
-                        this.classList.add('selected');
-                        const radio = this.querySelector('input[type="radio"]');
-                        radio.checked = true;
+                    option.addEventListener('click', function(e) {
+                        // Only handle if not clicking on a button or input directly
+                        if (!e.target.closest('.quantity-btn') && !e.target.closest(
+                            '.quantity-input')) {
+                            const radio = this.querySelector('input[type="radio"]');
+                            const checkbox = this.querySelector('input[type="checkbox"]');
+
+                            if (radio) {
+                                // For radio buttons, deselect others in the same group
+                                const groupName = radio.getAttribute('name');
+                                document.querySelectorAll(`input[name="${groupName}"]`).forEach(r => {
+                                    r.closest('.package-option').classList.remove('selected');
+                                });
+                                this.classList.add('selected');
+                                radio.checked = true;
+                            } else if (checkbox) {
+                                // For checkboxes, just toggle the selection
+                                this.classList.toggle('selected');
+                                checkbox.checked = !checkbox.checked;
+                            }
+                        }
                     });
                 });
 

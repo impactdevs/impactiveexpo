@@ -16,7 +16,19 @@ return new class extends Migration
             $table->string('business_name');
             $table->string('email');
             $table->string('phone');
-            $table->enum('package', ['gold', 'diamond', 'silver', 'bronze']);
+            
+            // Sponsor package
+            $table->enum('sponsor_package', ['gold', 'diamond', 'silver', 'bronze'])->nullable();
+            
+            // Exhibitor package
+            $table->enum('exhibitor_package', ['full_tent', 'shared_tent_2', 'shared_tent_5'])->nullable();
+            
+            // Dinner package
+            $table->enum('dinner_package', ['table_10', 'table_5', 'individual'])->nullable();
+            
+            // Magazine options (store as JSON array)
+            $table->json('magazine_options')->nullable();
+            
             $table->text('message')->nullable();
             $table->string('ip_address');
             $table->text('user_agent');

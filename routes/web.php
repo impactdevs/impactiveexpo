@@ -119,16 +119,26 @@ Route::post('/register-your-business', function (Request $request) {
         'business_name' => 'required|string|max:255',
         'email' => 'required|email|max:255',
         'phone' => 'required|string|max:20',
-        'package' => 'required|in:gold,diamond,silver,bronze',
+        'sponsor_package' => 'nullable|in:gold,diamond,silver,bronze',
+        'exhibitor_package' => 'nullable|in:full_tent,shared_tent_2,shared_tent_5',
+        'dinner_package' => 'nullable|in:table_10,table_5,individual',
         'message' => 'nullable|string|max:1000',
     ], [
         'business_name.required' => 'The business name field is required.',
         'email.required' => 'The email field is required.',
         'email.email' => 'Please enter a valid email address.',
         'phone.required' => 'The phone number field is required.',
-        'package.required' => 'Please select a package.',
-        'package.in' => 'Please select a valid package option.',
     ]);
+
+    // Check if at least one package is selected
+    $validator->after(function ($validator) use ($request) {
+        if (!$request->sponsor_package && 
+            !$request->exhibitor_package && 
+            !$request->dinner_package && 
+            empty($request->magazine_options)) {
+            $validator->errors()->add('package_required', 'Please select at least one package option.');
+        }
+    });
 
     // Check if validation fails
     if ($validator->fails()) {
@@ -138,26 +148,91 @@ Route::post('/register-your-business', function (Request $request) {
     }
 
     try {
+        // Collect magazine options
+        $magazineOptions = [];
+        if ($request->magazine_back_cover) $magazineOptions[] = 'back_cover';
+        if ($request->magazine_inside_cover) $magazineOptions[] = 'inside_cover';
+        if ($request->magazine_page3) $magazineOptions[] = 'page3';
+        if ($request->magazine_full_page) $magazineOptions[] = 'full_page';
+        if ($request->magazine_half_vertical) $magazineOptions[] = 'half_vertical';
+        if ($request->magazine_half_horizontal) $magazineOptions[] = 'half_horizontal';
+        if ($request->magazine_quarter) $magazineOptions[] = 'quarter';
+
         // Create and save registration
         $registration = BusinessRegistration::create([
             'business_name' => $request->business_name,
             'email' => $request->email,
             'phone' => $request->phone,
-            'package' => $request->package,
+            'sponsor_package' => $request->sponsor_package,
+            'exhibitor_package' => $request->exhibitor_package,
+            'dinner_package' => $request->dinner_package,
+            'magazine_options' => $magazineOptions,
             'message' => $request->message,
             'ip_address' => $request->ip(),
             'user_agent' => $request->header('User-Agent'),
         ]);
 
-        // construct a raw email to coordinator@impactivebubuexpo.com
-        $rawMessage = "Business Name: {$registration->business_name}\n";
+        // Construct email message
+        $rawMessage = "New Business Registration\n\n";
+        $rawMessage .= "Business Name: {$registration->business_name}\n";
         $rawMessage .= "Email: {$registration->email}\n";
         $rawMessage .= "Phone: {$registration->phone}\n";
-        $rawMessage .= "Package: {$registration->package}\n";
-        $rawMessage .= "Message: {$registration->message}\n";
+        
+        // Add selected packages
+        $rawMessage .= "\nSelected Packages:\n";
+        
+        if ($registration->sponsor_package) {
+            $sponsorMap = [
+                'gold' => 'Gold (100m)',
+                'diamond' => 'Diamond (50m)',
+                'silver' => 'Silver (25m)',
+                'bronze' => 'Bronze (5m)',
+            ];
+            $rawMessage .= "- Sponsor: " . ($sponsorMap[$registration->sponsor_package] ?? $registration->sponsor_package) . "\n";
+        }
+        
+        if ($registration->exhibitor_package) {
+            $exhibitorMap = [
+                'full_tent' => 'Full Tent (1,200,000 UGX)',
+                'shared_tent_2' => 'Shared Tent (Max 2) (600,000 UGX)',
+                'shared_tent_5' => 'Shared Tent (Max 5) (300,000 UGX)',
+            ];
+            $rawMessage .= "- Exhibitor: " . ($exhibitorMap[$registration->exhibitor_package] ?? $registration->exhibitor_package) . "\n";
+        }
+        
+        if ($registration->dinner_package) {
+            $dinnerMap = [
+                'table_10' => 'Table for 10 (1,000,000 UGX)',
+                'table_5' => 'Table for 5 (500,000 UGX)',
+                'individual' => 'Individual Ticket (100,000 UGX)',
+            ];
+            $rawMessage .= "- Dinner: " . ($dinnerMap[$registration->dinner_package] ?? $registration->dinner_package) . "\n";
+        }
+        
+        if (!empty($registration->magazine_options)) {
+            $magazineMap = [
+                'back_cover' => 'Back Cover (4,672,800 UGX)',
+                'inside_cover' => 'Inside Cover (3,894,000 UGX)',
+                'page3' => 'Page 3 (3,352,800 UGX)',
+                'full_page' => 'Full Page (2,336,400 UGX)',
+                'half_vertical' => 'Half Page Vertical (1,713,360 UGX)',
+                'half_horizontal' => 'Half Page Horizontal (1,401,840 UGX)',
+                'quarter' => 'Quarter Page (934,560 UGX)',
+            ];
+            
+            $rawMessage .= "- Magazine Options:\n";
+            foreach ($registration->magazine_options as $option) {
+                $rawMessage .= "  - " . ($magazineMap[$option] ?? $option) . "\n";
+            }
+        }
+        
+        $rawMessage .= "\nMessage: " . ($registration->message ?? 'N/A') . "\n";
         $rawMessage .= "IP Address: {$registration->ip_address}\n";
         $rawMessage .= "User Agent: {$registration->user_agent}\n";
         $rawMessage .= "Registration ID: {$registration->id}\n";
+        $rawMessage .= "Submitted At: " . now()->format('Y-m-d H:i:s') . "\n";
+
+        // Send email
         Mail::raw($rawMessage, function ($message) use ($registration) {
             $message->to('coordinator@impactivebubuexpo.com')
                 ->subject('New Business Registration')
