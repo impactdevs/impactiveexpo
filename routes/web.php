@@ -119,7 +119,7 @@ Route::post('/register-your-business', function (Request $request) {
         'business_name' => 'required|string|max:255',
         'email' => 'required|email|max:255',
         'phone' => 'required|string|max:20',
-        'sponsor_package' => 'nullable|in:gold,diamond,silver,bronze',
+        'sponsor_package' => 'nullable|in:platinum, gold,diamond,silver,bronze',
         'exhibitor_package' => 'nullable|in:full_tent,shared_tent_2,shared_tent_5',
         'dinner_package' => 'nullable|in:table_10,table_5,individual',
         'message' => 'nullable|string|max:1000',
@@ -183,9 +183,10 @@ Route::post('/register-your-business', function (Request $request) {
         
         if ($registration->sponsor_package) {
             $sponsorMap = [
-                'gold' => 'Gold (100m)',
+                'platinum' => 'Platinum (100m)',
                 'diamond' => 'Diamond (50m)',
-                'silver' => 'Silver (25m)',
+                'gold' => 'Gold (25m)',
+                'silver' => 'Silver (10m)',
                 'bronze' => 'Bronze (5m)',
             ];
             $rawMessage .= "- Sponsor: " . ($sponsorMap[$registration->sponsor_package] ?? $registration->sponsor_package) . "\n";

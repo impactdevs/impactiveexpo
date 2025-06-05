@@ -373,24 +373,24 @@
                             <!-- Business Name -->
                             <div class="col-md-12 form-group">
                                 <label for="business_name" class="form-label">Business Name</label>
-                                <input type="text" name="business_name" class="form-control" id="business_name" value="{{ old('business_name') }}"
-                                    placeholder="Enter business name" required>
+                                <input type="text" name="business_name" class="form-control" id="business_name"
+                                    value="{{ old('business_name') }}" placeholder="Enter business name" required>
                                 <span class="input-icon"><i class="fas fa-building"></i></span>
                             </div>
 
                             <!-- Contact Email -->
                             <div class="col-md-6 form-group mt-3">
                                 <label for="email" class="form-label">Contact Email</label>
-                                <input type="email" class="form-control" name="email" id="email" value="{{ old('email') }}"
-                                    placeholder="your@email.com" required>
+                                <input type="email" class="form-control" name="email" id="email"
+                                    value="{{ old('email') }}" placeholder="your@email.com" required>
                                 <span class="input-icon"><i class="fas fa-envelope"></i></span>
                             </div>
 
                             <!-- Phone Number -->
                             <div class="col-md-6 form-group mt-3">
                                 <label for="phone" class="form-label">Contact Phone</label>
-                                <input type="tel" class="form-control" name="phone" id="phone" value="{{ old('phone') }}"
-                                    placeholder="+123 456 7890" required>
+                                <input type="tel" class="form-control" name="phone" id="phone"
+                                    value="{{ old('phone') }}" placeholder="+123 456 7890" required>
                                 <span class="input-icon"><i class="fas fa-phone"></i></span>
                             </div>
 
@@ -404,8 +404,8 @@
                                 <div class="form-group mt-3">
                                     <div class="package-options package-grid">
                                         <div class="package-option">
-                                            <input type="radio" name="sponsor_package" id="gold" value="gold">
-                                            <label for="gold">Gold - 100m
+                                            <input type="radio" name="sponsor_package" id="platinum" value="platinum">
+                                            <label for="platinum">Platinum - 100m
                                                 <span class="package-option-price">100,000,000 UGX</span>
                                             </label>
                                         </div>
@@ -416,9 +416,16 @@
                                             </label>
                                         </div>
                                         <div class="package-option">
-                                            <input type="radio" name="sponsor_package" id="silver" value="silver">
-                                            <label for="silver">Silver - 25m
+                                            <input type="radio" name="sponsor_package" id="gold" value="gold">
+                                            <label for="gold">Gold - 25m
                                                 <span class="package-option-price">25,000,000 UGX</span>
+                                            </label>
+                                        </div>
+
+                                        <div class="package-option">
+                                            <input type="radio" name="sponsor_package" id="silver" value="silver">
+                                            <label for="silver">Silver - 10m
+                                                <span class="package-option-price">10,000,000 UGX</span>
                                             </label>
                                         </div>
                                         <div class="package-option">
@@ -440,7 +447,8 @@
                                 <div class="form-group mt-3">
                                     <div class="package-options package-grid package-grid-4">
                                         <div class="package-option">
-                                            <input type="radio" name="exhibitor_package" id="full_tent" value="full_tent">
+                                            <input type="radio" name="exhibitor_package" id="full_tent"
+                                                value="full_tent">
                                             <label for="full_tent">Full Tent
                                                 <span class="package-option-price">1,200,000 UGX</span>
                                             </label>
@@ -589,7 +597,7 @@
                     option.addEventListener('click', function(e) {
                         // Only handle if not clicking on a button or input directly
                         if (!e.target.closest('.quantity-btn') && !e.target.closest(
-                            '.quantity-input')) {
+                                '.quantity-input')) {
                             const radio = this.querySelector('input[type="radio"]');
                             const checkbox = this.querySelector('input[type="checkbox"]');
 

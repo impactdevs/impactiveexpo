@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('phone');
             
             // Sponsor package
-            $table->enum('sponsor_package', ['gold', 'diamond', 'silver', 'bronze'])->nullable();
+            $table->enum('sponsor_package', ['platinum', 'gold', 'diamond', 'silver', 'bronze'])->nullable();
             
             // Exhibitor package
             $table->enum('exhibitor_package', ['full_tent', 'shared_tent_2', 'shared_tent_5'])->nullable();

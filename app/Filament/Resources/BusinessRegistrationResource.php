@@ -43,9 +43,10 @@ class BusinessRegistrationResource extends Resource
                 // Sponsor Package
                 Forms\Components\Select::make('sponsor_package')
                     ->options([
-                        'gold' => 'Gold - 100m',
+                        'platinum' => 'Platinum - 100m',
                         'diamond' => 'Diamond - 50m',
-                        'silver' => 'Silver - 25m',
+                        'gold' => 'Gold - 25m',
+                        'silver' => 'Silver - 10m',
                         'bronze' => 'Bronze - 5m',
                     ])
                     ->nullable()
@@ -112,6 +113,7 @@ class BusinessRegistrationResource extends Resource
                 // Sponsor Package
                 Tables\Columns\TextColumn::make('sponsor_package')
                     ->formatStateUsing(fn (string $state): string => match ($state) {
+                        'platinum' => 'Platinum',
                         'gold' => 'Gold',
                         'diamond' => 'Diamond',
                         'silver' => 'Silver',
@@ -120,6 +122,7 @@ class BusinessRegistrationResource extends Resource
                     })
                     ->badge()
                     ->color(fn (string $state): string => match ($state) {
+                        'platinum' => 'success',
                         'gold' => 'warning',
                         'diamond' => 'primary',
                         'silver' => 'gray',
@@ -179,6 +182,7 @@ class BusinessRegistrationResource extends Resource
                 // Sponsor Package Filter
                 Tables\Filters\SelectFilter::make('sponsor_package')
                     ->options([
+                        'platinum' => 'Platinum',
                         'gold' => 'Gold',
                         'diamond' => 'Diamond',
                         'silver' => 'Silver',
