@@ -587,6 +587,60 @@
                     </form>
                 </div>
             </div>
+
+            {{-- bank account Payment details --}}
+            <div class="row justify-content-center mt-5">
+                <div class="col-lg-10">
+                    <div class="alert alert-info payment-details-box" style="background: linear-gradient(135deg, #ffe5ec 0%, #fffbe6 100%); border: 2px solid #fbbf24; border-radius: 18px; box-shadow: 0 6px 24px rgba(255, 192, 203, 0.15);">
+                        <h4 class="alert-heading" style="color: #d97706; font-weight: bold;">
+                            <i class="fas fa-university" style="color: #ec4899; margin-right: 8px;"></i>
+                            Payment Details
+                        </h4>
+                        <p style="color: #be185d; font-size: 1.1rem;">
+                            Please make your payment to the following bank account:
+                        </p>
+                        <ul style="list-style: none; padding-left: 0;">
+                            <li style="margin-bottom: 8px;">
+                                <strong style="color: #ec4899;">Bank Name:</strong>
+                                <span style="color: #d97706;">Guaranty Trust Bank (U)</span>
+                            </li>
+                            <li style="margin-bottom: 8px;">
+                                <strong style="color: #ec4899;">Account Name:</strong>
+                                <span style="color: #d97706;">Impact Associates Ltd</span>
+                            </li>
+                            <li style="margin-bottom: 8px;">
+                                <strong style="color: #ec4899;">Account Number:</strong>
+                                <span style="color: #d97706;">211124039151180</span>
+                            </li>
+                            <li>
+                                <strong style="color: #ec4899;">Currency:</strong>
+                                <span style="color: #d97706;">Uganda Shs Account</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <style>
+                .payment-details-box {
+                    background: linear-gradient(135deg, #ffe5ec 0%, #fffbe6 100%) !important;
+                    border: 2px solid #fbbf24 !important;
+                    border-radius: 18px !important;
+                    box-shadow: 0 6px 24px rgba(255, 192, 203, 0.15) !important;
+                }
+                .payment-details-box .alert-heading {
+                    color: #d97706 !important;
+                    font-weight: bold;
+                }
+                .payment-details-box ul li strong {
+                    color: #ec4899 !important;
+                }
+                .payment-details-box ul li span {
+                    color: #d97706 !important;
+                }
+                .payment-details-box p {
+                    color: #be185d !important;
+                }
+            </style>
         </div>
 
         <script>
