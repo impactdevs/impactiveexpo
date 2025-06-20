@@ -248,7 +248,7 @@
 
     <div style="background:#e6f0fa; border-radius:10px; padding:24px 20px; margin: 1.5em 0; color:#000;">
         <p style="color:#000;">
-            Attached is a detailed proposal for your consideration
+            Check our proposal <a href="https://impactivebubuexpo.com/publications" style="color:#7c3aed; text-decoration:underline;">here</a>.
         </p>
         <div style="text-align:center; margin: 1.5em 0;">
             <a href="https://impactivebubuexpo.com/register-with-us"
