@@ -263,6 +263,14 @@
     <footer>
         <div class="container" style="background:transparent; box-shadow:none; padding:0;">
             <div class="footer-title">Nyakaana Paul Businge, Project Coordinator</div>
+            {{-- "Win a return ticket" Direct to London & Back With Uganda Airlines--}}
+            <div style="color:#2d2350; margin:10px 0 0 0; font-weight:600;">
+                Win a return ticket direct to London & back with Uganda Airlines.<br>
+                Also stand a chance to win other exciting prizes at the Expo!
+            </div>
+            <div style="margin: 18px 0; text-align: center;">
+                <img src="https://impactivebubuexpo.com/assets/img/ug_airlines-min.jpg" alt="Uganda Airlines Banner" style="max-width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(124,58,237,0.10);">
+            </div>
             <div class="footer-contact">
                 BUBU Distributors Ltd | P.O.Box 11099 Kampala, Uganda<br>
                 Web: <a href="https://www.impactivebubuexpo.com"

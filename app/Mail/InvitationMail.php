@@ -48,6 +48,8 @@ class InvitationMail extends Mailable
      */
     public function attachments(): array
     {
-        return [];
+        return [
+            \Illuminate\Mail\Mailables\Attachment::fromPath(public_path('assets/img/bubu_sig-min.png')),
+        ];
     }
 }
