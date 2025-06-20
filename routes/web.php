@@ -132,10 +132,12 @@ Route::post('/register-your-business', function (Request $request) {
 
     // Check if at least one package is selected
     $validator->after(function ($validator) use ($request) {
-        if (!$request->sponsor_package && 
-            !$request->exhibitor_package && 
-            !$request->dinner_package && 
-            empty($request->magazine_options)) {
+        if (
+            !$request->sponsor_package &&
+            !$request->exhibitor_package &&
+            !$request->dinner_package &&
+            empty($request->magazine_options)
+        ) {
             $validator->errors()->add('package_required', 'Please select at least one package option.');
         }
     });
@@ -177,10 +179,10 @@ Route::post('/register-your-business', function (Request $request) {
         $rawMessage .= "Business Name: {$registration->business_name}\n";
         $rawMessage .= "Email: {$registration->email}\n";
         $rawMessage .= "Phone: {$registration->phone}\n";
-        
+
         // Add selected packages
         $rawMessage .= "\nSelected Packages:\n";
-        
+
         if ($registration->sponsor_package) {
             $sponsorMap = [
                 'platinum' => 'Platinum (100m)',
@@ -191,7 +193,7 @@ Route::post('/register-your-business', function (Request $request) {
             ];
             $rawMessage .= "- Sponsor: " . ($sponsorMap[$registration->sponsor_package] ?? $registration->sponsor_package) . "\n";
         }
-        
+
         if ($registration->exhibitor_package) {
             $exhibitorMap = [
                 'full_tent' => 'Full Tent (1,200,000 UGX)',
@@ -200,7 +202,7 @@ Route::post('/register-your-business', function (Request $request) {
             ];
             $rawMessage .= "- Exhibitor: " . ($exhibitorMap[$registration->exhibitor_package] ?? $registration->exhibitor_package) . "\n";
         }
-        
+
         if ($registration->dinner_package) {
             $dinnerMap = [
                 'table_10' => 'Table for 10 (1,000,000 UGX)',
@@ -209,7 +211,7 @@ Route::post('/register-your-business', function (Request $request) {
             ];
             $rawMessage .= "- Dinner: " . ($dinnerMap[$registration->dinner_package] ?? $registration->dinner_package) . "\n";
         }
-        
+
         if (!empty($registration->magazine_options)) {
             $magazineMap = [
                 'back_cover' => 'Back Cover (4,672,800 UGX)',
@@ -220,13 +222,13 @@ Route::post('/register-your-business', function (Request $request) {
                 'half_horizontal' => 'Half Page Horizontal (1,401,840 UGX)',
                 'quarter' => 'Quarter Page (934,560 UGX)',
             ];
-            
+
             $rawMessage .= "- Magazine Options:\n";
             foreach ($registration->magazine_options as $option) {
                 $rawMessage .= "  - " . ($magazineMap[$option] ?? $option) . "\n";
             }
         }
-        
+
         $rawMessage .= "\nMessage: " . ($registration->message ?? 'N/A') . "\n";
         $rawMessage .= "IP Address: {$registration->ip_address}\n";
         $rawMessage .= "User Agent: {$registration->user_agent}\n";
@@ -255,6 +257,49 @@ Route::post('/register-your-business', function (Request $request) {
             ->withInput();
     }
 })->name('register-with-us.post');
+
+Route::get('/send-emails', function () {
+
+    ini_set('max_execution_time', 1200);
+    ini_set('memory_limit', '-1');
+    //send a test email
+    // Mail::to('nsengiyumvawilberforce@gmail.com')->send(new \App\Mail\InvitationMail());
+    // return "sent successfully";
+
+
+
+    $filePath = public_path('bubu_emails.txt');
+    if (!file_exists($filePath)) {
+        Log::error('Email file not found: ' . $filePath);
+        return "Email file not found.";
+    }
+
+    $emailsRaw = file_get_contents($filePath);
+    $emails = array_filter(array_map('trim', explode(',', $emailsRaw)));
+
+    $sent = [];
+    $failed = [];
+
+    for ($i = 312; $i <= 611 && isset($emails[$i]); $i++) {
+        $email = $emails[$i];
+        try {
+            // send invitation email
+            Mail::to($email)->send(new \App\Mail\InvitationMail());
+            Log::info("Email sent to: $email");
+            $sent[] = $email;
+        } catch (\Exception $e) {
+            Log::error("Failed to send email to $email: " . $e->getMessage());
+            $failed[] = $email;
+            continue;
+        }
+    }
+
+    return response()->json([
+        'sent' => $sent,
+        'failed' => $failed,
+        'total' => count($emails)
+    ]);
+});
 
 
 Route::middleware('auth')->group(function () {
